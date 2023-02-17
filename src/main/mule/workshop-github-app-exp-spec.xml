@@ -144,5 +144,20 @@ payload map ((item, i) -> {
 })]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<ee:transform doc:name="Transform Message1" doc:id="cb56313c-ccd9-48a2-88d1-6bb22f727aef" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload map ((item, i) -> {
+	nodeId: item.node_id,
+  	name: item.name,
+  	"private": item."private",
+ 	sshUrl:item.ssh_url,
+ 	size: item.size,
+ 	pushedAt: item.pushed_at,
+})]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
     </flow>
 </mule>
