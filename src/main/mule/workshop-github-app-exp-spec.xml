@@ -136,7 +136,9 @@ payload map ((item, i) -> {
   	"private": item."private",
  	sshUrl: item.ssh_url,
  	size: item.size,
+ 	createdAt: item.created_at,
  	pushedAt: item.pushed_at,
+ 	updatedAt: item.updated_at
 })]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
